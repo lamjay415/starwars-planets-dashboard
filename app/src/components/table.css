@@ -1,0 +1,25 @@
+.planets-table {
+  border: 1px solid lightcoral;
+  height: 300px;
+  width: 700px;
+  padding: 15px;
+  overflow-y: scroll;
+}
+
+.table-header {
+  display: flex;
+}
+
+.table-header > * {
+  width: 150px;
+}
+
+.table-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.table-row > * {
+  padding-right: 10px;
+  width: 150px;
+}
