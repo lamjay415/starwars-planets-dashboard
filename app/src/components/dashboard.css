@@ -1,0 +1,11 @@
+.loading-page {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(28, 39, 58);
+}
+
+.loading-gif {
+  position: absolute;
+  top: 30%;
+  left: calc(50% - 400px / 2);
+}

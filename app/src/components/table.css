@@ -1,25 +1,68 @@
+.table-container{
+  padding: 50px;
+}
+
+.table-container > *{
+  width: 900px;
+}
+
 .planets-table {
+  position: relative;
   border: 1px solid lightcoral;
-  height: 300px;
-  width: 700px;
-  padding: 15px;
+  height: 400px;
+  /* width: 800px; */
+  /* padding: 10px; */
   overflow-y: scroll;
+  background-color: rgb(188,201,219);
 }
 
 .table-header {
   display: flex;
+  flex-direction: row;
+  background-color:rgb(106,143,187);
+  justify-content: space-between;
+  /* padding: 10px 0; */
+  width:100%;
+  position:sticky;
+  top:0px;
 }
 
 .table-header > * {
-  width: 150px;
+  padding:5px;
+  width: 250px;
 }
 
 .table-row {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.table-row:nth-child(even){
+  background-color:rgb(215,223,231);
 }
 
 .table-row > * {
-  padding-right: 10px;
-  width: 150px;
+  padding: 5px;
+  width: 250px;
+}
+
+.page-nav{
+  display: flex;
+  justify-content: space-around;
+  /* width: 800px; */
+  margin-top: 30px;
+}
+
+.nav-button {
+  padding: 10px;
+  background-color: lightcyan;
+  border-radius: 15px;
+  width: 100px;
+  text-align: center;
+}
+
+.nav-button:hover{
+  cursor: pointer;
 }

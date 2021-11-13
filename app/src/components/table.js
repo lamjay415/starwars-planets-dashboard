@@ -3,19 +3,20 @@ import './table.css';
 
 const Table = ({planets}) =>{
 
-    const [pages] = useState([]);
+    const [pages, setPages] = useState([]);
     const [page, setPage] = useState(0);
 
     // let rows = [];
 
-    useEffect(() => {
-        for(let i = 0; i<planets.length;i+=10){
-            pages.push(planets.slice(i,i+10));
-        }
-
-    }, []);
-
-    const rows = pages[page].map((planet,idx) => {
+    // useEffect(() => {
+    //     const tempPages = [];
+    //     for(let i = 0; i<planets.length;i+=10){
+    //         tempPages.push(planets.slice(i,i+10));
+    //     }
+    //     setPages(tempPages);
+    // }, [planets]);
+    // debugger;
+    const rows = planets ? planets.slice(page*10,(page+1)*10).map((planet,idx) => {
 
         return(
             <div className='table-row' key={`row-${idx}`}>
@@ -28,7 +29,7 @@ const Table = ({planets}) =>{
                 <div>{planet.surface_water}</div>
             </div>
         )
-    });
+    }): null;
 
     return (
         <div className='table-container'>
@@ -44,8 +45,10 @@ const Table = ({planets}) =>{
                 </div>
                 {rows}
             </div>
-            <div onClick={()=>setPage(page>0 ? page - 1 : 0)}>Previous</div>
-            <div onClick={()=>setPage(page < planets.length - 1 ? page + 1 : page)}>Next</div>
+            <div className='page-nav'>
+                <button onClick={()=>setPage(page-1)} className='nav-button' disabled={page===0}>Prev</button>
+                <button onClick={()=>setPage(page+1) }className='nav-button' disabled={planets.slice((page+1)*10).length === 0}>Next</button>
+            </div>
         </div>
     )
 }

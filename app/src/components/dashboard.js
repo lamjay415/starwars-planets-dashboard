@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import Table from './table';
+import './dashboard.css'
+
 
 const Dashboard = () => {
 
@@ -27,7 +29,6 @@ const Dashboard = () => {
                 });
 
                 setPlanets(data);
-
             } catch(error){
                 console.log("error", error);
             }
@@ -38,7 +39,11 @@ const Dashboard = () => {
     }, []);
 
     if(planets.length === 0){
-        return null;
+        return (
+            <div className='loading-page'>
+                <img src='https://i.pinimg.com/originals/a2/dc/96/a2dc9668f2cf170fe3efeb263128b0e7.gif' className='loading-gif'/>
+            </div>
+        )
     }
 
     console.log(planets);
