@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Table from './table';
+import Chart from './chart';
 import './dashboard.css'
 
 
@@ -50,6 +51,7 @@ const Dashboard = () => {
     return(
         <div>
             <Table planets={planets}/>
+            <Chart/>
         </div>
     )
 }
