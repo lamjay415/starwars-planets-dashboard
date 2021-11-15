@@ -51,7 +51,7 @@ const Dashboard = () => {
     return(
         <div>
             <Table planets={planets}/>
-            <Chart/>
+            <Chart planets={planets}/>
         </div>
     )
 }
