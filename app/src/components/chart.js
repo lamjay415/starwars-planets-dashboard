@@ -5,51 +5,54 @@ import './chart.css';
 const Chart = ({planets}) => {
     
     const [attribute, setAttribute] = useState('population');
-    console.log(attribute);
+
     const data = {
-        labels: planets.map(({name}) => name),
-        datasets: [
+      labels: planets.map(({name}) => name),
+      datasets: [
+        {
+          label: `# of ${attribute.replace('_',' ').toUpperCase()}`,
+          data: planets.map((planet) => planet[`${attribute}`]),
+          backgroundColor: planets.map(planet => {
+            const r = Math.round(Math.random() * 255);
+            const g = Math.round(Math.random() * 255);
+            const b = Math.round(Math.random() * 255);
+            return `rgba(${r},${g},${b},0.2)`;
+          }),
+          borderWidth: 1,
+        },
+      ],
+    };
+      
+    const options = {
+      maintainAspectRatio: false,
+      scales: {
+        yAxes: [
           {
-            label: '# of Votes',
-            data: planets.map((planet) => planet[`${attribute}`]),
-            backgroundColor: planets.map(planet => {
-              const r = Math.round(Math.random() * 255);
-              const g = Math.round(Math.random() * 255);
-              const b = Math.round(Math.random() * 255);
-              return `rgba(${r},${g},${b},0.2)`;
-            }),
-            borderWidth: 1,
+            ticks: {
+              beginAtZero: true,
+              autoSkip:false
+            },
           },
         ],
-      };
-      
-      const options = {
-        scales: {
-          yAxes: [
-            {
-              ticks: {
-                beginAtZero: true,
-              },
-            },
-          ],
-        },
-      };
+      },
+    };
 
     return (
+      <div>
         <div className='chart-container'>
             <div className='header'>
-                <h1 className='title'>Vertical Bar Chart</h1>
-                <div className='links'>
-                <a
-                    className='btn btn-gh'
-                    href='https://github.com/reactchartjs/react-chartjs-2/blob/master/example/src/charts/VerticalBar.js'
-                >
-                    Github Source
-                </a>
-                </div>
+                <h1 className='title'>Star Wars Planets Stat Chart</h1>
             </div>
-            <Bar data={data} options={options}/>
+            <Bar data={data} options={options} width={'80%'}/>
         </div>
+        <div className='chart-nav'>
+          <div onClick={()=>setAttribute('population')} class='chart-button'>Population</div>
+          <div onClick={()=>setAttribute('rotation_period')} class='chart-button'>Rotational Period</div>
+          <div onClick={()=>setAttribute('orbital_period')} class='chart-button'>Orbital Period</div>
+          <div onClick={()=>setAttribute('diameter')} class='chart-button'>Diameter</div>
+          <div onClick={()=>setAttribute('surface_water')} class='chart-button'>Surface Water</div>
+        </div>
+      </div>
     )
 
 }

@@ -16,7 +16,7 @@ const Table = ({planets}) =>{
     //     setPages(tempPages);
     // }, [planets]);
     // debugger;
-    const rows = planets ? planets.slice(page*10,(page+1)*10).map((planet,idx) => {
+    const rows = planets ? planets.slice(page*6,(page+1)*6).map((planet,idx) => {
 
         return(
             <div className='table-row' key={`row-${idx}`}>
@@ -46,8 +46,9 @@ const Table = ({planets}) =>{
                 {rows}
             </div>
             <div className='page-nav'>
-                <button onClick={()=>setPage(page-1)} className='nav-button' disabled={page===0}>Prev</button>
-                <button onClick={()=>setPage(page+1) }className='nav-button' disabled={planets.slice((page+1)*10).length === 0}>Next</button>
+                <button onClick={()=>setPage(page-1)} className='nav-button' disabled={page===0}>{'<'}</button>
+                <div class='page-num'>{page+1}</div>
+                <button onClick={()=>setPage(page+1) }className='nav-button' disabled={planets.slice((page+1)*6).length === 0}>{'>'}</button>
             </div>
         </div>
     )

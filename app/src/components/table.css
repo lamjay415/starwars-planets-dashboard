@@ -1,34 +1,48 @@
-.table-container{
-  padding: 50px;
+.table-container {
+  padding-top: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.table-container > *{
+.table-container > * {
   width: 900px;
 }
 
 .planets-table {
   position: relative;
-  border: 1px solid lightcoral;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: 400px;
-  /* width: 800px; */
-  /* padding: 10px; */
-  overflow-y: scroll;
-  background-color: rgb(188,201,219);
+  background-color: white;
+  border: 1px solid whitesmoke;
+  padding: 20px 15px;
+  border-radius: 3px;
+}
+
+.planets-table > * {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  border-bottom: 1px solid lightgray;
 }
 
 .table-header {
   display: flex;
   flex-direction: row;
-  background-color:rgb(106,143,187);
+  background-color: rgb(214, 223, 232);
   justify-content: space-between;
   /* padding: 10px 0; */
-  width:100%;
-  position:sticky;
-  top:0px;
+  width: 100%;
+  position: sticky;
+  top: 0px;
 }
 
 .table-header > * {
-  padding:5px;
+  padding: 5px;
   width: 250px;
 }
 
@@ -39,30 +53,59 @@
   padding: 10px 0;
 }
 
-.table-row:nth-child(even){
-  background-color:rgb(215,223,231);
-}
+/* .table-row:nth-child(even) {
+  background-color: rgb(215, 223, 231);
+} */
 
 .table-row > * {
   padding: 5px;
   width: 250px;
 }
 
-.page-nav{
+.table-row:hover {
+  background-color: snow;
+}
+
+.page-nav {
   display: flex;
-  justify-content: space-around;
-  /* width: 800px; */
+  justify-content: flex-end;
   margin-top: 30px;
 }
 
 .nav-button {
   padding: 10px;
-  background-color: lightcyan;
-  border-radius: 15px;
-  width: 100px;
+  border: 1px solid white;
+  border-radius: 3px;
+  color: rgb(28, 39, 58);
   text-align: center;
+  width: 50px;
+  font-weight: bolder;
+  background-color: snow;
+  margin: 0 7px;
 }
 
-.nav-button:hover{
+.page-num {
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 3px;
+  color: rgb(28, 39, 58);
+  text-align: center;
+  width: 30px;
+  font-weight: bolder;
+  background-color: snow;
+}
+
+.nav-button:hover {
   cursor: pointer;
+  /* color: white;
+  background-color: rgb(28, 39, 58);
+
+  transition: 0.5s; */
+}
+
+.nav-button:disabled {
+  border-color: lightslategray;
+  color: white;
+  background-color: gray;
+  transition: 0.5s;
 }
