@@ -41,7 +41,7 @@ const Chart = ({planets}) => {
             {
                 label: `# of ${attribute.replace('_',' ').toUpperCase()}`,
                 data: planetsData[attribute].slice(page*30,(page+1)*30),
-                backgroundColor: colors,
+                backgroundColor: colors.slice(page*30,(page+1)*30),
                 borderWidth: 1,
             },
         ],
