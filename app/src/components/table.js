@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import './table.css';
 
 const Table = ({planets}) =>{
@@ -36,7 +36,7 @@ const Table = ({planets}) =>{
             </div>
             <div className='page-nav'>
                 <button onClick={()=>setPage(page-1)} className='nav-button' disabled={page===0}>{'<'}</button>
-                <div class='page-num'>{page+1}</div>
+                <div className='page-num'>{page+1}</div>
                 <button onClick={()=>setPage(page+1) }className='nav-button' disabled={planets.slice((page+1)*6).length === 0}>{'>'}</button>
             </div>
         </div>

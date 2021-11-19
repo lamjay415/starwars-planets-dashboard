@@ -18,7 +18,7 @@ const Dashboard = () => {
                 let response = await fetch(url);
                 let json = await response.json();
                 let data = json.results;
-                // setPlanets(json.results);
+
                 while(json.next){
                     response = await fetch(json.next);
                     json = await response.json();
@@ -43,7 +43,7 @@ const Dashboard = () => {
     if(planets.length === 0){
         return (
             <div className='loading-page'>
-                <img src='https://i.pinimg.com/originals/a2/dc/96/a2dc9668f2cf170fe3efeb263128b0e7.gif' className='loading-gif'/>
+                <img src='https://i.pinimg.com/originals/a2/dc/96/a2dc9668f2cf170fe3efeb263128b0e7.gif' className='loading-gif' alt=''/>
             </div>
         )
     }
@@ -52,10 +52,12 @@ const Dashboard = () => {
 
     return(
         <div>
-            <div className='main-title'>Star Wars Galaxy Statistics</div>
-            <div className='main-nav'>
-                <div onClick={()=>setContent('table')}>Table</div>
-                <div onClick={()=>setContent('chart')}>Chart</div>
+            <div className='main-header'>
+                <div className='main-title'>Star Wars Galaxy Statistics</div>
+                <div className='main-nav'>
+                    <div onClick={()=>setContent('table')}>Table</div>
+                    <div onClick={()=>setContent('chart')}>Chart</div>
+                </div>
             </div>
             {mainContent}
         </div>
