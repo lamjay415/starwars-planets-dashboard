@@ -3,19 +3,8 @@ import './table.css';
 
 const Table = ({planets}) =>{
 
-    const [pages, setPages] = useState([]);
     const [page, setPage] = useState(0);
 
-    // let rows = [];
-
-    // useEffect(() => {
-    //     const tempPages = [];
-    //     for(let i = 0; i<planets.length;i+=10){
-    //         tempPages.push(planets.slice(i,i+10));
-    //     }
-    //     setPages(tempPages);
-    // }, [planets]);
-    // debugger;
     const rows = planets ? planets.slice(page*6,(page+1)*6).map((planet,idx) => {
 
         return(

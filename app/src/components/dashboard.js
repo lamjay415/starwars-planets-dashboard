@@ -8,6 +8,7 @@ const Dashboard = () => {
 
     const [planets, setPlanets] = useState([]);
     // const [page, setPage] = useState(0);
+    const [content, setContent] = useState('table');
 
     useEffect(()=>{
         const url = 'https://swapi.dev/api/planets/';
@@ -47,11 +48,16 @@ const Dashboard = () => {
         )
     }
 
-    console.log(planets);
+    const mainContent = content === 'table' ? <Table planets={planets}/> : <Chart planets={planets}/>
+
     return(
         <div>
-            <Table planets={planets}/>
-            <Chart planets={planets}/>
+            <div className='main-title'>Star Wars Galaxy Statistics</div>
+            <div className='main-nav'>
+                <div onClick={()=>setContent('table')}>Table</div>
+                <div onClick={()=>setContent('chart')}>Chart</div>
+            </div>
+            {mainContent}
         </div>
     )
 }

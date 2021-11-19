@@ -9,3 +9,30 @@
   top: 30%;
   left: calc(50% - 400px / 2);
 }
+
+.main-nav{
+  display:flex;
+  padding: 25px 0;
+}
+
+.main-nav > *{
+  border: 1px solid whitesmoke;
+  border-radius: 5px;
+  padding: 10px;
+  color: rgb(28, 39, 58);
+  font-weight: 800;
+  margin-left: 20px;
+  background-color: rgb(142,216,252);
+}
+
+.main-nav > *:hover{
+  cursor: pointer;
+}
+
+.main-title{
+  color: rgb(232,158,16);
+  font-size: x-large;
+  font-weight: 800;
+  padding: 20px 0;
+  text-align: center;
+}

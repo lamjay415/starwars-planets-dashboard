@@ -1,5 +1,4 @@
 .table-container {
-  padding-top: 150px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -35,9 +34,7 @@
   flex-direction: row;
   background-color: rgb(214, 223, 232);
   justify-content: space-between;
-  /* padding: 10px 0; */
   width: 100%;
-  position: sticky;
   top: 0px;
 }
 

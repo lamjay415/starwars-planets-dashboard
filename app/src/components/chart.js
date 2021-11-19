@@ -24,13 +24,21 @@ const Chart = ({planets}) => {
     };
       
     const options = {
+      width: '750',
       maintainAspectRatio: false,
       scales: {
+        xAxes: [
+          {
+            ticks: {
+              autoSkip:false,
+              minRotation: 90
+            }
+          }
+        ],
         yAxes: [
           {
             ticks: {
               beginAtZero: true,
-              autoSkip:false
             },
           },
         ],
@@ -43,7 +51,7 @@ const Chart = ({planets}) => {
             <div className='header'>
                 <h1 className='title'>Star Wars Planets Stat Chart</h1>
             </div>
-            <Bar data={data} options={options} width={'80%'}/>
+            <Bar data={data} options={options}/>
         </div>
         <div className='chart-nav'>
           <div onClick={()=>setAttribute('population')} class='chart-button'>Population</div>

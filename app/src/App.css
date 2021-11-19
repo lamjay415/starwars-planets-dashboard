@@ -129,8 +129,7 @@ table {
 }
 
 .App{
-  height: 100%;
-  /* width: 100vw; */
+  height: 100vh;
   background-color: rgb(28, 39, 58);
   font-family: 'Roboto Mono', monospace;
 }

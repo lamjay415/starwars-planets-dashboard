@@ -1,5 +1,4 @@
 .chart-container{
-    margin-top: 50px;
     display:flex;
     flex-direction: column;
     justify-content: space-around;
@@ -10,17 +9,16 @@
     background-color: whitesmoke;
     padding: 15px;
     border-radius: 15px;
-    margin-top: 50px;
 }
 
 .chart-nav{
     display:flex;
     justify-content: space-around;
     padding: 20px 0;
-    width: 60%;
+    width: 70%;
     align-items: center;
     margin: auto;
-    padding-bottom: 200px;
+    /* padding-bottom: 200px; */
 }
 
 .chart-button{
