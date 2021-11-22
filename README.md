@@ -10,18 +10,21 @@ Data includes: population, rotation period, orbital period, diameter, surface wa
 + [react-chartjs](https://www.npmjs.com/package/react-chartjs-2)
 
 # How to run 
-
-1. Install dependencies
+1. Clone this repo
+    ``` 
+    git clone git@github.com:lamjay415/starwars-planets-dashboard.git
+    ```
+2. Install dependencies
     ```
     npm install
     ```
-2. Run webpage 
+3. Run webpage 
     ```
     npm start
     ```
 # Screenshots 
 
-![table](https://i.gyazo.com/eb1f5ff3c628778d1a8aa8c10c80c41a.png)
-![chart](https://i.gyazo.com/e05a7490699028ecf1c13ae0d16d36c6.png)
-![chart](https://i.gyazo.com/f95858a8d253068963f6d8562f15c795.png)
+![example table](https://i.gyazo.com/eb1f5ff3c628778d1a8aa8c10c80c41a.png)
+![example chart](https://i.gyazo.com/e05a7490699028ecf1c13ae0d16d36c6.png)
+![example chart 2](https://i.gyazo.com/f95858a8d253068963f6d8562f15c795.png)
 
