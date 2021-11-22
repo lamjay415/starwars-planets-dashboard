@@ -1,15 +1,15 @@
 import React, {useState, useEffect} from 'react';
-import Table from './table';
-import Chart from './chart';
+import PlanetsTable from './table/PlanetsTable';
+import PlanetsChart from './chart/PlanetsChart';
 import './dashboard.css'
 
 
 const Dashboard = () => {
 
     const [planets, setPlanets] = useState([]);
-    // const [page, setPage] = useState(0);
     const [content, setContent] = useState('table');
 
+    //on mount, fetch all data from api, sort it alphabetically, and set it to state
     useEffect(()=>{
         const url = 'https://swapi.dev/api/planets/';
 
@@ -40,6 +40,7 @@ const Dashboard = () => {
 
     }, []);
 
+    //while data is fetching, display loading gif
     if(planets.length === 0){
         return (
             <div className='loading-page'>
@@ -48,7 +49,8 @@ const Dashboard = () => {
         )
     }
 
-    const mainContent = content === 'table' ? <Table planets={planets}/> : <Chart planets={planets}/>
+    //display table or chart depending on user selection
+    const mainContent = content === 'table' ? <PlanetsTable planets={planets}/> : <PlanetsChart planets={planets}/>
 
     return(
         <div>

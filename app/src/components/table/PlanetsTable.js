@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 import './table.css';
 
-const Table = ({planets}) =>{
+const PlanetsTable = ({planets}) =>{
 
     const [page, setPage] = useState(0);
 
+    //select 10 planets to display depending on page number 
     const rows = planets ? planets.slice(page*10,(page+1)*10).map((planet,idx) => {
-
         return(
             <div className='table-row' key={`row-${idx}`}>
                 <div>{planet.name}</div>
@@ -26,7 +26,7 @@ const Table = ({planets}) =>{
                 <div className='table-header'>
                     <div>Name</div>
                     <div>Population</div>
-                    <div>Rotational Period</div>
+                    <div>Rotation Period</div>
                     <div>Orbital Period</div>
                     <div>Diameter</div>
                     <div>Climate</div>
@@ -43,4 +43,4 @@ const Table = ({planets}) =>{
     )
 }
 
-export default Table;
+export default PlanetsTable;
