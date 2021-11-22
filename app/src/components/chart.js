@@ -1,23 +1,33 @@
 import React, {useState,useEffect} from 'react';
 import {Bar} from 'react-chartjs-2';
+import zoomPlugin from 'chartjs-plugin-zoom';
 import './chart.css';
 
 const Chart = ({planets}) => {
-    
+
     const [attribute, setAttribute] = useState('population');
     const [page, setPage] = useState(0);
     const [planetsData,setPlanetsData] = useState({});
     const [colors, setColors] = useState([]);
 
+    //on mount, store planets' attributes into state and assign initial colors for each planet
     useEffect(()=>{
-        setPlanetsData({
-            name: planets.map((planet)=>planet[`name`]),
-            population: planets.map((planet)=>planet[`population`]),
-            rotation: planets.map((planet)=>planet[`rotation_period`]),
-            orbital: planets.map((planet)=>planet[`orbital_period`]),
-            diameter: planets.map((planet)=>planet[`diameter`]),
-            water: planets.map((planet)=>planet[`surface_water`])
-        });
+ 
+        //create temp obj with empty attribute arrays
+        let tempObj = {name:[], population: [], rotation: [], orbital: [], diameter: [], water: []};
+
+        //for each planet, push data into corresponding arrays and assign tempObj to state
+        setPlanetsData(planets.reduce((prev,curr)=>{
+            prev['name'].push(curr[`name`]);
+            prev['population'].push(curr[`population`]);
+            prev['rotation'].push(curr[`rotation_period`]);
+            prev['orbital'].push(curr[`orbital_period`]);
+            prev['diameter'].push(curr[`diameter`]);
+            prev['water'].push(curr[`surface_water`]);
+            return prev;
+        },tempObj));
+
+        //assign colors for all planet
         setColors( () => {
             let colors = [];
             for(let i = 0; i < planets.length; i++){
@@ -30,13 +40,14 @@ const Chart = ({planets}) => {
         });
     },[planets]);
 
+    //return null on first render if planetsData is empty
     if(Object.keys(planetsData).length===0){
       return null;
     }
 
+    //assign state to actual chart data obj, limiting 30 planets per page 
     const data = {
         labels: planetsData['name'].slice(page*30,(page+1)*30),
-        // planets.slice(page*30,(page+1)*30).map(({name}) => name),
         datasets: [
             {
                 label: `# of ${attribute.replace('_',' ').toUpperCase()}`,
@@ -47,11 +58,31 @@ const Chart = ({planets}) => {
         ],
     };
       
+    //chart options
     const options = {
-        width: '750',
         maintainAspectRatio: false,
+        responsive: true,
+        plugins: {
+            zoom: {
+              zoom: {
+                wheel: {
+                  enabled: true // SET SCROOL ZOOM TO TRUE
+                },
+                mode: "xy",
+                speed: 100
+              },
+              enabled: true,
+              drag:true,
+              pan: {
+                enabled: true,
+                mode: "xy",
+                speed: 100
+              }
+            }
+        }
     };
 
+    //function to view different chart attributes
     const viewAttribute = (attribute) => {
         setAttribute(attribute);
         setPage(0);

@@ -16,6 +16,7 @@
   justify-content: space-between;
   height: 600px;
   width: 80%;
+  min-width: 650px;
   background-color: white;
   border: 1px solid whitesmoke;
   padding: 20px 15px;

@@ -130,6 +130,8 @@ table {
 
 .App{
   height: 100vh;
+  min-width: 850px;
+  min-height: 900px;
   background-color: rgb(28, 39, 58);
   font-family: 'Roboto Mono', monospace;
 }
