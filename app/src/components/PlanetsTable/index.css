@@ -1,100 +1,96 @@
 .table-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .planets-table {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 600px;
-  width: 80%;
-  min-width: 650px;
-  background-color: white;
-  border: 1px solid whitesmoke;
-  padding: 20px 15px;
-  border-radius: 3px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 600px;
+    width: 80%;
+    min-width: 650px;
+    background-color: white;
+    border: 1px solid whitesmoke;
+    padding: 20px 15px;
+    border-radius: 3px;
 }
 
 .planets-table > * {
-  align-items: center;
-  border-bottom: 1px solid lightgray;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
 }
 
 .table-header {
-  display: flex;
-  flex-direction: row;
-  background-color: rgb(214, 223, 232);
-  justify-content: space-between;
-  width: 100%;
-  min-width: 45px;
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(214, 223, 232);
+    justify-content: space-between;
+    width: 100%;
+    min-height: 45px;
 }
 
 .table-header > * {
-  padding: 5px;
-  width: 150px;
+    padding: 5px;
+    width: 150px;
 }
 
 .table-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 10px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 0;
 }
 
 .table-row > * {
-  padding: 5px;
-  width: 250px;
+    padding: 5px;
+    width: 250px;
 }
 
 .table-row:hover {
-  background-color: snow;
+    background-color: snow;
 }
 
 .page-nav {
-  display: flex;
-  justify-content: flex-end;
-  width: 80%;
-  margin-top: 30px;
+    display: flex;
+    justify-content: flex-end;
+    width: 80%;
+    margin-top: 30px;
 }
 
 .nav-button {
-  padding: 10px;
-  border: 1px solid white;
-  border-radius: 3px;
-  color: rgb(28, 39, 58);
-  text-align: center;
-  width: 50px;
-  font-weight: bolder;
-  background-color: snow;
-  margin: 0 7px;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 3px;
+    color: rgb(28, 39, 58);
+    text-align: center;
+    width: 50px;
+    font-weight: bolder;
+    background-color: snow;
+    margin: 0 7px;
 }
 
 .page-num {
-  padding: 10px;
-  border: 1px solid white;
-  border-radius: 3px;
-  color: rgb(28, 39, 58);
-  text-align: center;
-  width: 30px;
-  font-weight: bolder;
-  background-color: snow;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 3px;
+    color: rgb(28, 39, 58);
+    text-align: center;
+    width: 30px;
+    font-weight: bolder;
+    background-color: snow;
 }
 
 .nav-button:hover {
-  cursor: pointer;
-  /* color: white;
-  background-color: rgb(28, 39, 58);
-
-  transition: 0.5s; */
+    cursor: pointer;
 }
 
 .nav-button:disabled {
-  border-color: lightslategray;
-  color: white;
-  background-color: gray;
-  transition: 0.5s;
+    border-color: lightslategray;
+    color: white;
+    background-color: gray;
+    transition: 0.5s;
 }

@@ -13,6 +13,7 @@ const Dashboard = () => {
     useEffect(()=>{
         const url = 'https://swapi.dev/api/planets/';
 
+        //fetch data from url and while response data has a next url, continue fetching from next url
         const fetchData = async()=>{
             try{
                 let response = await fetch(url);
