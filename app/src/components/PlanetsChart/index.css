@@ -1,39 +1,39 @@
-.chart-container{
-    display:flex;
-    flex-direction: column;
-    justify-content: space-around;
-    margin: auto;
-    align-items: center;
-    height: 500px;
-    width: 80%;
-    min-width: 850px;
-    background-color: white;
-    padding: 15px;
-    border-radius: 5px;
+.chart-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: auto;
+  align-items: center;
+  height: 600px;
+  width: 80%;
+  min-width: 850px;
+  background-color: white;
+  padding: 15px;
+  border-radius: 5px;
 }
 
-.chart-nav{
-    display:flex;
-    justify-content: space-between;
-    padding: 20px 0;
-    width: 80%;
-    min-width: 850px;
-    align-items: center;
-    margin: auto;
+.chart-nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  width: 80%;
+  min-width: 850px;
+  align-items: center;
+  margin: auto;
 }
 
-.chart-button{
-    padding: 10px;
-    border: 1px solid white;
-    border-radius: 3px;
-    color:white;
-    font-weight: bold;
-    transition: 0.5s;
+.chart-button {
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 3px;
+  color: white;
+  font-weight: bold;
+  transition: 0.5s;
 }
 
-.chart-button:hover{
-    cursor: pointer;
-    color: rgb(28, 39, 58);
-    background-color: white;
-    transition: 0.5s;
+.chart-button:hover {
+  cursor: pointer;
+  color: rgb(28, 39, 58);
+  background-color: white;
+  transition: 0.5s;
 }
