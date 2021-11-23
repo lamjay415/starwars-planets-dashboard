@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import PlanetsTable from './table/PlanetsTable';
-import PlanetsChart from './chart/PlanetsChart';
-import './dashboard.css'
+import PlanetsTable from '../PlanetsTable';
+import PlanetsChart from '../PlanetsChart';
+import './index.css'
 
 
 const Dashboard = () => {

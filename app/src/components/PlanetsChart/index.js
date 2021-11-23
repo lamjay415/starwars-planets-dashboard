@@ -1,6 +1,6 @@
 import React, {useState,useEffect} from 'react';
 import {Bar} from 'react-chartjs-2';
-import './chart.css';
+import './index.css';
 
 const PlanetsChart = ({planets}) => {
 
@@ -41,7 +41,7 @@ const PlanetsChart = ({planets}) => {
 
     // return null on first render if planetsData is empty
     if(Object.keys(planetsData).length===0){
-      return null;
+        return null;
     }
 
     // assign state's planet data to actual chart data obj based on selected attribute, 
@@ -93,19 +93,19 @@ const PlanetsChart = ({planets}) => {
       <div>
           <div className='chart-container'>
               <div className='header'>
-                  <h1 className='title'>Star Wars Planets Stat Chart</h1>
+                    <h1 className='title'>Star Wars Planets Stat Chart</h1>
               </div>
               <Bar data={data} options={options}/>
           </div>
           <div className='chart-nav'>
-              <div onClick={()=>viewAttribute('population')} className='chart-button'>Population</div>
-              <div onClick={()=>viewAttribute('rotation period')} className='chart-button'>Rotation Period</div>
-              <div onClick={()=>viewAttribute('orbital period')} className='chart-button'>Orbital Period</div>
-              <div onClick={()=>viewAttribute('diameter')} className='chart-button'>Diameter</div>
-              <div onClick={()=>viewAttribute('surface water')} className='chart-button'>Surface Water</div>
-              <div className='chart-page-nav'>
-                  <button className='nav-button' onClick={()=>setPage(page-1)} disabled={page===0}>{'<'}</button>
-                  <button className='nav-button' onClick={()=>setPage(page+1)} disabled={planets.slice((page+1)*30).length === 0}>{'>'}</button>
+                <div onClick={()=>viewAttribute('population')} className='chart-button'>Population</div>
+                <div onClick={()=>viewAttribute('rotation period')} className='chart-button'>Rotation Period</div>
+                <div onClick={()=>viewAttribute('orbital period')} className='chart-button'>Orbital Period</div>
+                <div onClick={()=>viewAttribute('diameter')} className='chart-button'>Diameter</div>
+                <div onClick={()=>viewAttribute('surface water')} className='chart-button'>Surface Water</div>
+                <div className='chart-page-nav'>
+                    <button className='nav-button' onClick={()=>setPage(page-1)} disabled={page===0}>{'<'}</button>
+                    <button className='nav-button' onClick={()=>setPage(page+1)} disabled={planets.slice((page+1)*30).length === 0}>{'>'}</button>
               </div>
           </div>
       </div>

@@ -1,6 +1,6 @@
 /* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
+	 v2.0 | 20110126
+	 License: none (public domain)
 */
 
 html,
@@ -128,10 +128,10 @@ table {
   border-spacing: 0;
 }
 
-.App{
+.App {
   height: 100vh;
   min-width: 850px;
   min-height: 900px;
   background-color: rgb(28, 39, 58);
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
 }

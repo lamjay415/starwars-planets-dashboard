@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import './table.css';
+import './index.css';
 
 const PlanetsTable = ({planets}) =>{
 
