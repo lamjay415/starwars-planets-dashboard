@@ -1,6 +1,6 @@
 # About
 
-This project is display to show all 60 planets' statistics in the Star Wars Galaxy utilizing Javascript and ChartJS. 
+This project is created to display all 60 planets' statistics in the Star Wars Galaxy utilizing Javascript and ChartJS. 
 Data includes: population, rotation period, orbital period, diameter, surface water. All data used for this project is from https://swapi.dev/. 
 
 # Built With

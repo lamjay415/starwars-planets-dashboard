@@ -5,7 +5,7 @@ const PlanetsTable = ({planets}) =>{
 
     const [page, setPage] = useState(0);
 
-    //select 10 planets to display depending on page number 
+    // select 10 planets to display depending on page number 
     const rows = planets ? planets.slice(page*10,(page+1)*10).map((planet,idx) => {
         return(
             <div className='table-row' key={`row-${idx}`}>

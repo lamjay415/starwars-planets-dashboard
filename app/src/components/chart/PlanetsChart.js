@@ -26,7 +26,7 @@ const PlanetsChart = ({planets}) => {
             return prev;
         },tempObj));
 
-        //assign colors for all planet
+        // assign colors for all planet
         setColors( () => {
             let colors = [];
             for(let i = 0; i < planets.length; i++){
@@ -39,12 +39,13 @@ const PlanetsChart = ({planets}) => {
         });
     },[planets]);
 
-    //return null on first render if planetsData is empty
+    // return null on first render if planetsData is empty
     if(Object.keys(planetsData).length===0){
       return null;
     }
 
-    //assign state's planet data to actual chart data obj based on selected attribute, limiting 30 planets per page 
+    // assign state's planet data to actual chart data obj based on selected attribute, 
+    // limiting 30 planets per page 
     const data = {
         labels: planetsData['name'].slice(page*30,(page+1)*30),
         datasets: [
@@ -57,7 +58,7 @@ const PlanetsChart = ({planets}) => {
         ],
     };
       
-    //chart options
+    // chart options
     const options = {
         maintainAspectRatio: false,
         responsive: true,
@@ -72,8 +73,8 @@ const PlanetsChart = ({planets}) => {
         }
     };
 
-    //change y-axis scale to log due to huge difference in population between planets
-    //in order to show every planet on chart
+    // change y-axis scale to log only for population attribute 
+    // due to huge difference in population between planets
     if(attribute === 'population'){
         options.scales = {
             y:{
@@ -82,7 +83,7 @@ const PlanetsChart = ({planets}) => {
         }
     }
 
-    //function to view different chart attributes
+    // function to view different chart attributes by changing state
     const viewAttribute = (attribute) => {
         setAttribute(attribute);
         setPage(0);
